@@ -10,6 +10,7 @@ body{
     background-size: cover;
     overflow-y: hidden; /* Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
+    background-color: #FBCCD1;
 }
 .carta-wrapper{
   position: relative;
@@ -139,7 +140,7 @@ body{
   right: 0;
   border-bottom: 0px solid transparent;
   border-top: 150px solid transparent;
-  border-right: 300px solid #f8f8f8;
+  border-right: 300px solid #fff;
   z-index: 1;
 }
 
@@ -154,7 +155,7 @@ body{
 
 .open {
   border-right: 150px solid transparent;
-  border-top: 78px solid #eaeaea;
+  border-top: 78px solid #ffeeee;
   border-left: 150px solid transparent;  
   position: absolute;
   z-index: 9999;
@@ -172,7 +173,7 @@ body{
   background: #f2f2f2;
   z-index: 0;
   left: 56px;
-  background-image: url(images/invitacion-1.jpeg);
+  background-image: url(images/invitacion1.jpeg);
   background-size: cover;
 }
 
@@ -281,23 +282,25 @@ to {
       margin-bottom: 105px;
       box-shadow: 1px 1px 1px #a6a6a6;
   } 70% {
-      height: 400px;
+      height: 420px;
       z-index: 0;
       width: 295px;
       left: 56px;
+      bottom: -5px;
   } 80% {
-    height: 425px;
+      height: 455px;
       margin-bottom: 175px;
       box-shadow: 2px 2px 2px #a6a6a6;
   } 90% {
-    height: 455px;
+    height: 475px;
       z-index: 8888;
   } 100% {
-      height: 475px;
+      height: 525px;
       width: 335px;
       z-index: 9999;
       left: 35px;
       box-shadow: 5px 5px 5px #a6a6a6;
+      bottom: -45px;
   }  
 }
 
