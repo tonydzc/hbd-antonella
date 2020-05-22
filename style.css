@@ -1,0 +1,310 @@
+html{
+  height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0 auto;
+    background-image: url("images/img5.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.carta-wrapper{
+  position: relative;
+  height: 400px;
+}
+.carta-wrapper-open{
+  position: relative;
+  height: 400px;
+}
+
+.carta-wrapper #carta{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  animation-name: angry-animation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+
+@keyframes angry-animation {
+  0%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40%{
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  50%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  60%{
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  80%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+
+.carta-wrapper-open #carta{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+
+#carta-div img{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+#invitacion{
+  width: 350px;
+  position: absolute;
+  top: 31%;
+  margin: 0 auto;
+  animation-name: mostrar-invitacion;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
+
+@keyframes mostrar-invitacion {
+  0%   {width: 260px; opacity: 50%;}
+  25%  {width: 260px; }
+  50%  {width: 300px; opacity: 75%;}
+  75%  {width: 325px; }
+  100% {width: 350px; }
+}
+
+
+/*///////////*/
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+}
+
+.envelope {
+  background: #ffffff;
+  width: 100%;
+  height: 80px;
+  position: relative;
+  margin: 85px 0 30px 0;
+  z-index: 1;
+  padding-bottom: 150px;
+}
+
+.envelope:before,
+.envelope:after {
+  content: "";
+  position: absolute;
+  bottom: 0;  
+}
+
+.envelope:before {
+  right: 0;
+  border-bottom: 0px solid transparent;
+  border-top: 150px solid transparent;
+  border-right: 300px solid #f8f8f8;
+  z-index: 1;
+}
+
+.envelope:after {
+  left: 0;
+  border-bottom: 0px solid transparent;
+  border-top: 150px solid transparent;
+  border-left: 300px solid #fff;  
+  z-index: 1;
+  box-shadow: 5px 5px 5px #a6a6a6;
+}
+
+.open {
+  border-right: 150px solid transparent;
+  border-top: 78px solid #eaeaea;
+  border-left: 150px solid transparent;  
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  transform-origin: 0% 0%;
+}
+
+.paper {
+  width: 295px;
+  height: 135px;
+  position: absolute;
+  bottom: 0;
+  margin-left: -55px;
+  background: #f2f2f2;
+  z-index: 0;
+  left: 56px;
+  background-image: url(images/invitacion-1.jpeg);
+  background-size: cover;
+}
+
+.noti {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  color: #fff;
+  font: bold 20px/36px "Helvetica";
+  text-align: center;
+  background: #2ecc71;
+  box-shadow: 0 4px 0 rgba(216,217,216, 0.7);
+  opacity: 0;  
+}
+
+ul {
+  margin: 25px auto 0 auto;
+  padding: 0;
+  display: block;
+  width: 80%;
+}
+
+li {
+  list-style: none;
+  background: #d3d3d3;
+  width: 100%;
+  height: 5px;
+  margin-bottom: 5px;
+}
+
+li:nth-child(1) {
+  width: 50%;  
+}
+
+li:nth-child(2) {
+  margin-bottom: 20px;  
+  width: 20%;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: gray;
+  letter-spacing: 1px;
+  font: bold 13px "helvetica"; 
+  padding: 8px 15px;
+}
+
+
+/* TRIGGER ANIMATIONS */
+.is-active .open {
+  animation: foldUp 1s ease-in-out; 
+  animation-fill-mode: forwards;
+}
+  
+.is-active .paper {
+  animation: paperUp 1.5s ease-in-out; 
+  animation-fill-mode: forwards;
+  animation-delay: 1s; /* W3C and Opera */ 
+}
+
+.is-active .noti {
+  animation: noti 0.5s ease-in-out; 
+  animation-fill-mode: forwards;
+  animation-delay: 2s; /* W3C and Opera */ 
+}
+
+.is-active .mapa{
+  animation: mapaShow 2.5 ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+}
+
+
+/* ANIMATIONS */
+@keyframes foldUp {  
+from {  
+    transform: rotateX(0deg);
+}  
+to {  
+    transform:rotateX(180deg);
+    z-index: 0;
+   }  
+}
+
+@keyframes noti {  
+  from {  
+    opacity: 0;
+  } to {  
+    opacity: 1;
+   }  
+}
+
+
+@keyframes paperUp {  
+  from {  
+      height: 135px;
+  } 60% {
+      height: 245px;
+      margin-bottom: 105px;
+      box-shadow: 1px 1px 1px #a6a6a6;
+  } 70% {
+      height: 400px;
+      z-index: 0;
+      width: 295px;
+      left: 56px;
+  } 80% {
+    height: 425px;
+      margin-bottom: 175px;
+      box-shadow: 2px 2px 2px #a6a6a6;
+  } 90% {
+    height: 455px;
+      z-index: 8888;
+  } 100% {
+      height: 475px;
+      width: 335px;
+      z-index: 9999;
+      left: 35px;
+      box-shadow: 5px 5px 5px #a6a6a6;
+  }  
+}
+
+
+@media only screen and (min-width: 1200px)  {
+  body{
+    background-size: inherit;
+  }
+}
+
